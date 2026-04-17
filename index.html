@@ -559,6 +559,81 @@
     }
     .project-link:hover { opacity: 0.7; }
 
+    /* Lightbox zoom button */
+    .project-zoom {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity var(--transition);
+      z-index: 2;
+    }
+    .project-thumb:hover .project-zoom { opacity: 1; }
+    @media (hover: none) {
+      .project-zoom { opacity: 0.85; }
+    }
+    .project-zoom:hover { background: rgba(0,0,0,0.75); }
+    .project-zoom svg { width: 18px; height: 18px; }
+
+    /* Lightbox overlay */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      cursor: zoom-out;
+    }
+    .lightbox.active { opacity: 1; visibility: visible; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: var(--radius);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+      cursor: default;
+      transform: scale(0.92);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .lightbox.active img { transform: scale(1); }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.25); }
+
     /* ========== PUBLICATIONS ========== */
     #publications { background: var(--bg-subtle); }
 
@@ -1090,7 +1165,7 @@
         <!-- ViShruti -->
         <article class="project-card featured reveal" style="--accent:#B8860B">
           <div class="project-accent"></div>
-          <div class="project-thumb"><img src="thumbs/vishruti.jpg" alt="ViShruti AI smart eyewear prototype" loading="lazy"></div>
+          <div class="project-thumb"><img src="thumbs/vishruti.jpg" alt="ViShruti AI smart eyewear prototype" loading="lazy"><button class="project-zoom" aria-label="View full image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></button></div>
           <div class="project-body">
             <div class="project-category">Assistive Technology &middot; Ayata Intelligence</div>
             <h3>ViShruti&reg; &mdash; AI Smart Eyewear for the Visually Impaired</h3>
@@ -1112,7 +1187,7 @@
         <!-- AI Pump Controller -->
         <article class="project-card featured reveal" style="--accent:#0ea5e9">
           <div class="project-accent"></div>
-          <div class="project-thumb"><img src="thumbs/ai50-dash.jpg" alt="AI Pump Controller cloud dashboard showing pressure, current and pump telemetry" loading="lazy"></div>
+          <div class="project-thumb"><img src="thumbs/ai50-dash.jpg" alt="AI Pump Controller cloud dashboard showing pressure, current and pump telemetry" loading="lazy"><button class="project-zoom" aria-label="View full image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></button></div>
           <div class="project-body">
             <div class="project-category">Smart Utilities &middot; Aquatronic / Innovate UK KTP</div>
             <h3>AI Pump Controller &mdash; 60% Downtime Reduction</h3>
@@ -1133,7 +1208,7 @@
         <!-- ARTIK Smart Water Meter -->
         <article class="project-card reveal" style="--accent:#14b8a6">
           <div class="project-accent"></div>
-          <div class="project-thumb"><img src="thumbs/artik.jpg" alt="Samsung ARTIK 10 based smart water meter prototype" loading="lazy"></div>
+          <div class="project-thumb"><img src="thumbs/artik.jpg" alt="Samsung ARTIK 10 based smart water meter prototype" loading="lazy"><button class="project-zoom" aria-label="View full image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></button></div>
           <div class="project-body">
             <div class="project-category">IoT &middot; Gravity Innovations &middot; Samsung Challenge</div>
             <h3>ARTIK Smart Water Meter &mdash; California Drought Challenge</h3>
@@ -1155,7 +1230,7 @@
         <!-- Unified Controller -->
         <article class="project-card reveal" style="--accent:#f59e0b">
           <div class="project-accent"></div>
-          <div class="project-thumb"><img src="thumbs/unified.jpg" alt="Unified Electronic Controller with TouchGFX display for building water systems" loading="lazy"></div>
+          <div class="project-thumb"><img src="thumbs/unified.jpg" alt="Unified Electronic Controller with TouchGFX display for building water systems" loading="lazy"><button class="project-zoom" aria-label="View full image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></button></div>
           <div class="project-body">
             <div class="project-category">Embedded Systems &middot; Stuart Turner Ltd</div>
             <h3>Unified Electronic Controller for Building Water Systems</h3>
@@ -1174,7 +1249,7 @@
         <!-- GlucoBridge -->
         <article class="project-card reveal" style="--accent:#8b5cf6; --thumb-pos: center 99%">
           <div class="project-accent"></div>
-          <div class="project-thumb"><img src="thumbs/gluco.jpg" alt="GlucoBridge BLE glucose meter PCB with coin-cell battery" loading="lazy"></div>
+          <div class="project-thumb"><img src="thumbs/gluco.jpg" alt="GlucoBridge BLE glucose meter PCB with coin-cell battery" loading="lazy"><button class="project-zoom" aria-label="View full image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></button></div>
           <div class="project-body">
             <div class="project-category">MedTech &middot; Silicon Valley Hackathon</div>
             <h3>GlucoBridge &mdash; BLE Glucose Meter</h3>
@@ -1191,7 +1266,7 @@
         <!-- Audi -->
         <article class="project-card reveal" style="--accent:#f59e0b; --thumb-pos: center 65%">
           <div class="project-accent"></div>
-          <div class="project-thumb"><img src="thumbs/audi.jpg" alt="Audi Test Drive Cube with 90-minute countdown LED display" loading="lazy"></div>
+          <div class="project-thumb"><img src="thumbs/audi.jpg" alt="Audi Test Drive Cube with 90-minute countdown LED display" loading="lazy"><button class="project-zoom" aria-label="View full image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></button></div>
           <div class="project-body">
             <div class="project-category">Automotive &middot; Audi</div>
             <h3>Audi Test Drive Cube &mdash; GPS/GSM Precision Delivery</h3>
@@ -1208,7 +1283,7 @@
         <!-- NAO Robot -->
         <article class="project-card reveal" style="--accent:#22c55e; --thumb-pos: center 15%">
           <div class="project-accent"></div>
-          <div class="project-thumb"><img src="thumbs/nao.jpg" alt="NAO humanoid robot holding a tray of ingredients for recipe recommendation research" loading="lazy"></div>
+          <div class="project-thumb"><img src="thumbs/nao.jpg" alt="NAO humanoid robot holding a tray of ingredients for recipe recommendation research" loading="lazy"><button class="project-zoom" aria-label="View full image"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></button></div>
           <div class="project-body">
             <div class="project-category">Robotics & AI &middot; University of Essex</div>
             <h3>NAO Robot @ iSpace &mdash; Human-Robot Interaction</h3>
@@ -1414,6 +1489,37 @@
     window.addEventListener('scroll', updateParallax, { passive: true });
     window.addEventListener('resize', updateParallax, { passive: true });
     updateParallax();
+
+    // --- Image lightbox ---
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img src="" alt="">';
+    document.body.appendChild(lightbox);
+
+    const lbImg = lightbox.querySelector('img');
+    const lbClose = lightbox.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.project-zoom').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const img = btn.parentElement.querySelector('img');
+        if (img) {
+          lbImg.src = img.src;
+          lbImg.alt = img.alt;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
   </script>
 </body>
 </html>
