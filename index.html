@@ -469,6 +469,7 @@
     }
     .project-accent {
       height: 3px;
+      background: var(--accent, var(--border));
     }
     .project-thumb {
       width: 100%;
@@ -531,9 +532,9 @@
       border-radius: 999px;
       font-size: 0.75rem;
       font-weight: 500;
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      background: var(--bg);
+      color: var(--accent, var(--text-muted));
+      border: 1px solid color-mix(in srgb, var(--accent, var(--border)) 35%, transparent);
+      background: color-mix(in srgb, var(--accent, var(--bg)) 6%, var(--bg));
     }
     .project-award {
       font-size: 0.8125rem;
@@ -542,6 +543,9 @@
       line-height: 1.5;
       font-weight: 500;
       margin-bottom: 12px;
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 6%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
     }
     .project-link {
       font-size: 0.875rem;
@@ -550,6 +554,7 @@
       align-items: center;
       gap: 4px;
       transition: opacity var(--transition);
+      color: var(--accent);
     }
     .project-link:hover { opacity: 0.7; }
 
@@ -1082,8 +1087,8 @@
 
       <div class="project-grid">
         <!-- ViShruti -->
-        <article class="project-card featured reveal">
-          <div class="project-accent" style="background:#B8860B"></div>
+        <article class="project-card featured reveal" style="--accent:#B8860B">
+          <div class="project-accent"></div>
           <div class="project-thumb"><img src="thumbs/vishruti.jpg" alt="ViShruti AI smart eyewear prototype" loading="lazy"></div>
           <div class="project-body">
             <div class="project-category">Assistive Technology &middot; Ayata Intelligence</div>
@@ -1096,16 +1101,16 @@
               <span class="project-tag">Edge AI</span>
               <span class="project-tag">Embedded Linux</span>
             </div>
-            <div class="project-award" style="color:#B8860B;background:rgba(184,134,11,0.06);border:1px solid rgba(184,134,11,0.2);">
+            <div class="project-award">
               &#127942; IoT/WT Innovation World Cup 2018, Munich &middot; Intel India Best Hardware Startup &middot; Patent granted
             </div>
-            <a href="https://youtu.be/xdlvv2ZSYrs" target="_blank" rel="noopener noreferrer" class="project-link" style="color:#B8860B;">Watch demo &nearr;</a>
+            <a href="https://youtu.be/xdlvv2ZSYrs" target="_blank" rel="noopener noreferrer" class="project-link">Watch demo &nearr;</a>
           </div>
         </article>
 
         <!-- AI Pump Controller -->
-        <article class="project-card featured reveal">
-          <div class="project-accent" style="background:#0ea5e9"></div>
+        <article class="project-card featured reveal" style="--accent:#0ea5e9">
+          <div class="project-accent"></div>
           <div class="project-thumb"><img src="thumbs/ai50-dash.jpg" alt="AI Pump Controller cloud dashboard showing pressure, current and pump telemetry" loading="lazy"></div>
           <div class="project-body">
             <div class="project-category">Smart Utilities &middot; Aquatronic / Innovate UK KTP</div>
@@ -1118,15 +1123,15 @@
               <span class="project-tag">Cloud Telemetry</span>
               <span class="project-tag">XAI</span>
             </div>
-            <div class="project-award" style="color:#0ea5e9;background:rgba(14,165,233,0.06);border:1px solid rgba(14,165,233,0.2);">
+            <div class="project-award">
               &#127942; Innovate UK KTP &middot; Patent pending UK
             </div>
           </div>
         </article>
 
         <!-- ARTIK Smart Water Meter -->
-        <article class="project-card reveal">
-          <div class="project-accent" style="background:#14b8a6"></div>
+        <article class="project-card reveal" style="--accent:#14b8a6">
+          <div class="project-accent"></div>
           <div class="project-thumb"><img src="thumbs/artik.jpg" alt="Samsung ARTIK 10 based smart water meter prototype" loading="lazy"></div>
           <div class="project-body">
             <div class="project-category">IoT &middot; Gravity Innovations &middot; Samsung Challenge</div>
@@ -1139,16 +1144,16 @@
               <span class="project-tag">IoT</span>
               <span class="project-tag">Edge Gateway</span>
             </div>
-            <div class="project-award" style="color:#14b8a6;background:rgba(20,184,166,0.06);border:1px solid rgba(20,184,166,0.2);">
+            <div class="project-award">
               &#127942; Popular Choice Award &middot; Top 10 Globally &middot; Samsung ARTIK Makers Against Drought
             </div>
-            <a href="https://devpost.com/software/artik-smart-water-meter" target="_blank" rel="noopener noreferrer" class="project-link" style="color:#14b8a6;">View on Devpost &nearr;</a>
+            <a href="https://devpost.com/software/artik-smart-water-meter" target="_blank" rel="noopener noreferrer" class="project-link">View on Devpost &nearr;</a>
           </div>
         </article>
 
         <!-- Unified Controller -->
-        <article class="project-card reveal">
-          <div class="project-accent" style="background:#f59e0b"></div>
+        <article class="project-card reveal" style="--accent:#f59e0b">
+          <div class="project-accent"></div>
           <div class="project-thumb"><img src="thumbs/unified.jpg" alt="Unified Electronic Controller with TouchGFX display for building water systems" loading="lazy"></div>
           <div class="project-body">
             <div class="project-category">Embedded Systems &middot; Stuart Turner Ltd</div>
@@ -1166,8 +1171,8 @@
         </article>
 
         <!-- GlucoBridge -->
-        <article class="project-card reveal">
-          <div class="project-accent" style="background:#8b5cf6"></div>
+        <article class="project-card reveal" style="--accent:#8b5cf6">
+          <div class="project-accent"></div>
           <div class="project-thumb"><img src="thumbs/gluco.jpg" alt="GlucoBridge BLE glucose meter PCB with coin-cell battery" loading="lazy"></div>
           <div class="project-body">
             <div class="project-category">MedTech &middot; Silicon Valley Hackathon</div>
@@ -1183,8 +1188,8 @@
         </article>
 
         <!-- Audi -->
-        <article class="project-card reveal">
-          <div class="project-accent" style="background:#f59e0b"></div>
+        <article class="project-card reveal" style="--accent:#f59e0b">
+          <div class="project-accent"></div>
           <div class="project-thumb"><img src="thumbs/audi.jpg" alt="Audi Test Drive Cube with 90-minute countdown LED display" loading="lazy"></div>
           <div class="project-body">
             <div class="project-category">Automotive &middot; Audi</div>
@@ -1200,8 +1205,8 @@
         </article>
 
         <!-- NAO Robot -->
-        <article class="project-card reveal">
-          <div class="project-accent" style="background:#22c55e"></div>
+        <article class="project-card reveal" style="--accent:#22c55e">
+          <div class="project-accent"></div>
           <div class="project-thumb"><img src="thumbs/nao.jpg" alt="NAO humanoid robot holding a tray of ingredients for recipe recommendation research" loading="lazy"></div>
           <div class="project-body">
             <div class="project-category">Robotics & AI &middot; University of Essex</div>
@@ -1214,7 +1219,7 @@
               <span class="project-tag">UPnP</span>
               <span class="project-tag">NAO</span>
             </div>
-            <a href="https://www.youtube.com/watch?v=njZhaHHqYoc" target="_blank" rel="noopener noreferrer" class="project-link" style="color:#22c55e;">Watch demo &nearr;</a>
+            <a href="https://www.youtube.com/watch?v=njZhaHHqYoc" target="_blank" rel="noopener noreferrer" class="project-link">Watch demo &nearr;</a>
           </div>
         </article>
       </div>
