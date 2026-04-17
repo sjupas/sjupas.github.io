@@ -1,0 +1,14 @@
+﻿# Large source images (keep optimized copies in thumbs/ instead)
+/unified.jpg
+/artik.jpg
+/ai50-dash.jpg
+/audi.jpg
+/gluco.jpg
+/nao.jpg
+
+# Cowork / local tooling
+.claude/
+
+# OS noise
+.DS_Store
+Thumbs.db
