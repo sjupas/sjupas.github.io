@@ -470,6 +470,26 @@
     .project-accent {
       height: 3px;
     }
+    .project-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #f3f4f6;
+      border-bottom: 1px solid var(--border);
+    }
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--transition);
+    }
+    .project-card:hover .project-thumb img {
+      transform: scale(1.03);
+    }
+    .project-card.featured .project-thumb {
+      aspect-ratio: 21 / 9;
+    }
     .project-body {
       padding: clamp(20px, 3vw, 28px);
     }
@@ -1058,6 +1078,7 @@
         <!-- ViShruti -->
         <article class="project-card featured reveal">
           <div class="project-accent" style="background:#B8860B"></div>
+          <div class="project-thumb"><img src="thumbs/vishruti.jpg" alt="ViShruti AI smart eyewear prototype" loading="lazy"></div>
           <div class="project-body">
             <div class="project-category">Assistive Technology &middot; Ayata Intelligence</div>
             <h3>ViShruti&reg; &mdash; AI Smart Eyewear for the Visually Impaired</h3>
@@ -1079,6 +1100,7 @@
         <!-- AI Pump Controller -->
         <article class="project-card featured reveal">
           <div class="project-accent" style="background:#0ea5e9"></div>
+          <div class="project-thumb"><img src="thumbs/pump-dashboard.jpg" alt="AI Pump Controller cloud dashboard showing pressure, current and pump telemetry" loading="lazy"></div>
           <div class="project-body">
             <div class="project-category">Smart Utilities &middot; Aquatronic / Innovate UK KTP</div>
             <h3>AI Pump Controller &mdash; 60% Downtime Reduction</h3>
@@ -1138,6 +1160,7 @@
         <!-- GlucoBridge -->
         <article class="project-card reveal">
           <div class="project-accent" style="background:#8b5cf6"></div>
+          <div class="project-thumb"><img src="thumbs/glucobridge.jpg" alt="GlucoBridge BLE glucose meter PCB with coin-cell battery" loading="lazy"></div>
           <div class="project-body">
             <div class="project-category">MedTech &middot; Silicon Valley Hackathon</div>
             <h3>GlucoBridge &mdash; BLE Glucose Meter</h3>
@@ -1154,6 +1177,7 @@
         <!-- Audi -->
         <article class="project-card reveal">
           <div class="project-accent" style="background:#f59e0b"></div>
+          <div class="project-thumb"><img src="thumbs/audi-cube.jpg" alt="Audi Test Drive Cube with 90-minute countdown LED display" loading="lazy"></div>
           <div class="project-body">
             <div class="project-category">Automotive &middot; Audi</div>
             <h3>Audi Test Drive Cube &mdash; GPS/GSM Precision Delivery</h3>
@@ -1170,6 +1194,7 @@
         <!-- NAO Robot -->
         <article class="project-card reveal">
           <div class="project-accent" style="background:#22c55e"></div>
+          <div class="project-thumb"><img src="thumbs/nao-robot.jpg" alt="NAO humanoid robot holding a tray of ingredients for recipe recommendation research" loading="lazy"></div>
           <div class="project-body">
             <div class="project-category">Robotics & AI &middot; University of Essex</div>
             <h3>NAO Robot @ iSpace &mdash; Human-Robot Interaction</h3>
