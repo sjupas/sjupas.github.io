@@ -483,6 +483,7 @@
       width: 100%;
       height: 160%;
       object-fit: cover;
+      object-position: var(--thumb-pos, center center);
       display: block;
       position: absolute;
       top: 0;
@@ -1087,7 +1088,7 @@
 
       <div class="project-grid">
         <!-- ViShruti -->
-        <article class="project-card featured reveal" style="--accent:#B8860B">
+        <article class="project-card featured reveal" style="--accent:#B8860B; --thumb-pos: center 30%">
           <div class="project-accent"></div>
           <div class="project-thumb"><img src="thumbs/vishruti.jpg" alt="ViShruti AI smart eyewear prototype" loading="lazy"></div>
           <div class="project-body">
@@ -1205,7 +1206,7 @@
         </article>
 
         <!-- NAO Robot -->
-        <article class="project-card reveal" style="--accent:#22c55e">
+        <article class="project-card reveal" style="--accent:#22c55e; --thumb-pos: center top">
           <div class="project-accent"></div>
           <div class="project-thumb"><img src="thumbs/nao.jpg" alt="NAO humanoid robot holding a tray of ingredients for recipe recommendation research" loading="lazy"></div>
           <div class="project-body">
